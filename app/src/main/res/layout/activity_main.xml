@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:paddingBottom="@dimen/activity_vertical_margin"
+       android:paddingTop="@dimen/activity_vertical_margin"
+       android:paddingLeft="@dimen/activity_horizontal_margin"
+       android:paddingRight="@dimen/activity_horizontal_margin"
+       tools:context=".MainActivity">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/tv_sort_header"
+           android:layout_centerHorizontal="true"
+           android:gravity="center"
+           android:visibility="gone"
+           android:textColor="@android:color/black"
+           android:layout_marginTop="@dimen/header_margin_top"/>
+
+       <ListView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/lvItems"
+           android:layout_below="@+id/tv_sort_header"
+           android:dividerHeight="@dimen/activity_divider_height"/>
+
+       <TextView
+           android:id="@+id/tv_sort_header2"
+           style="?android:attr/listSeparatorTextViewStyle"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/lvItems"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="@dimen/header_margin_top"
+           android:gravity="center"
+           android:textColor="@android:color/black"
+           android:visibility="gone" />
+
+       <ListView
+           android:id="@+id/lvItems2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/tv_sort_header2"
+           android:dividerHeight="@dimen/activity_divider_height" />
+
+       <TextView
+           android:id="@+id/tv_sort_header3"
+           style="?android:attr/listSeparatorTextViewStyle"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/lvItems2"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="@dimen/header_margin_top"
+           android:gravity="center"
+           android:textColor="@android:color/black"
+           android:visibility="gone" />
+
+       <ListView
+           android:id="@+id/lvItems3"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/tv_sort_header3"
+           android:dividerHeight="@dimen/activity_divider_height" />
+
+   </RelativeLayout>
+
+
+</ScrollView>
