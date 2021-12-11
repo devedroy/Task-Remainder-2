@@ -150,24 +150,21 @@ public class AddItemActivity extends AppCompatActivity implements EditDateDialog
 
                 String title = getIntent().getStringExtra("title");
                 etTitle.setText(title);
-            }
-            else if (simpleDateFormat.parse(tvDate.getText().toString()).before(simpleDateFormat.parse(getCurrentDateTime())) && statusSpinner.getSelectedItemPosition() + 1 != 3) {
-                String text = getResources().getString(R.string.message_valid_name);
+            } else if (simpleDateFormat.parse(tvDate.getText().toString()).before(simpleDateFormat.parse(getCurrentDateTime())) && statusSpinner.getSelectedItemPosition() + 1 != 3) {
+                String text = getResources().getString(R.string.expired_message);
 
                 Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
 
                 status = getIntent().getIntExtra("status", 0);
                 statusSpinner.setSelection(status - 1);
-            }
-            else if (!simpleDateFormat.parse(tvDate.getText().toString()).before(simpleDateFormat.parse(getCurrentDateTime())) && statusSpinner.getSelectedItemPosition() + 1 == 3) {
+            } else if (!simpleDateFormat.parse(tvDate.getText().toString()).before(simpleDateFormat.parse(getCurrentDateTime())) && statusSpinner.getSelectedItemPosition() + 1 == 3) {
                 String text = getResources().getString(R.string.unexpired_message);
 
                 Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
 
                 status = getIntent().getIntExtra("status", 0);
                 statusSpinner.setSelection(status - 1);
-            }
-            else {
+            } else {
                 Intent data = new Intent();
 
                 data.putExtra("itemTitle", etTitle.getText().toString());
@@ -191,7 +188,6 @@ public class AddItemActivity extends AppCompatActivity implements EditDateDialog
     private void showEditDialog() {
         TextView tvDate = (TextView) findViewById(R.id.text_view_dialog_add_date);
         EditDateDialogFragment.newInstance(tvDate.getText().toString()).show(getSupportFragmentManager(), "fragment_edit_date_dialog");
-
     }
 
     private String getCurrentDateTime() {
